@@ -8,6 +8,10 @@ var group: String = "OOP"
 class Car {
     var speed: Float = 0
     var isMoving: Bool = false
+    init(speed: Float, isMoving: Bool) {
+        self.speed = speed
+        self.isMoving = isMoving
+    }
     func stop() {
         isMoving = false
     }
@@ -18,8 +22,16 @@ class Car {
     func printSpeed() {
         if isMoving {
             print("The car is moving")
+            print("Speed:", speed, " Units")
         } else {
             print("The car isn't moving")
         }
     }
 }
+
+var bibica = Car(speed: 0, isMoving: false)
+bibica.accelerate(amount: 10)
+bibica.printSpeed()
+print()
+bibica.stop()
+bibica.printSpeed()
