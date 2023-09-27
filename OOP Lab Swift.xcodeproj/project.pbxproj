@@ -23,6 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		48ABE2682AC3FA9D0088787F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		48D4FCE22AAF9909004AD5B1 /* Lab0 Swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Lab0 Swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D4FCE52AAF9909004AD5B1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -38,10 +39,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48ABE2672AC3FA9D0088787F /* Lab1 Swift */ = {
+			isa = PBXGroup;
+			children = (
+				48ABE2682AC3FA9D0088787F /* main.swift */,
+			);
+			path = "Lab1 Swift";
+			sourceTree = "<group>";
+		};
 		48D4FCD92AAF9909004AD5B1 = {
 			isa = PBXGroup;
 			children = (
 				48D4FCE42AAF9909004AD5B1 /* Lab0 Swift */,
+				48ABE2672AC3FA9D0088787F /* Lab1 Swift */,
 				48D4FCE32AAF9909004AD5B1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,7 +107,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 48D4FCDD2AAF9909004AD5B1 /* Build configuration list for PBXProject "Lab0 Swift" */;
+			buildConfigurationList = 48D4FCDD2AAF9909004AD5B1 /* Build configuration list for PBXProject "OOP Lab Swift" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -270,7 +280,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		48D4FCDD2AAF9909004AD5B1 /* Build configuration list for PBXProject "Lab0 Swift" */ = {
+		48D4FCDD2AAF9909004AD5B1 /* Build configuration list for PBXProject "OOP Lab Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				48D4FCE72AAF9909004AD5B1 /* Debug */,
