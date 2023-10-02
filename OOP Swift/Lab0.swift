@@ -1,4 +1,9 @@
-//Sandbox
+//
+//
+//  Lab0 Swift
+//
+//  Created by Dragosh on 19.09.2023.
+//
 
 let grade: Character = "A"
 let isNoon: Bool = false
@@ -29,9 +34,11 @@ class Car {
     }
 }
 
-var bibica = Car(speed: 0, isMoving: false)
-bibica.accelerate(amount: 10)
-bibica.printSpeed()
-print()
-bibica.stop()
-bibica.printSpeed()
+func lab0() {
+    let bibica = Car(speed: 0, isMoving: false)
+    bibica.accelerate(amount: 10)
+    bibica.printSpeed()
+    print()
+    bibica.stop()
+    bibica.printSpeed()
+}

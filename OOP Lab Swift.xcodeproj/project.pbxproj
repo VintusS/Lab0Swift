@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		486D3A3D2ACAFFA800902B21 /* Lab0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D3A3C2ACAFFA800902B21 /* Lab0.swift */; };
+		486D3A3F2ACB013700902B21 /* Lab1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D3A3E2ACB013700902B21 /* Lab1.swift */; };
 		48D4FCE62AAF9909004AD5B1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D4FCE52AAF9909004AD5B1 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,7 +25,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		48ABE2682AC3FA9D0088787F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		486D3A3C2ACAFFA800902B21 /* Lab0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab0.swift; sourceTree = "<group>"; };
+		486D3A3E2ACB013700902B21 /* Lab1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab1.swift; sourceTree = "<group>"; };
 		48D4FCE22AAF9909004AD5B1 /* Lab0 Swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Lab0 Swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D4FCE52AAF9909004AD5B1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -39,19 +42,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		48ABE2672AC3FA9D0088787F /* Lab1 Swift */ = {
-			isa = PBXGroup;
-			children = (
-				48ABE2682AC3FA9D0088787F /* main.swift */,
-			);
-			path = "Lab1 Swift";
-			sourceTree = "<group>";
-		};
 		48D4FCD92AAF9909004AD5B1 = {
 			isa = PBXGroup;
 			children = (
-				48D4FCE42AAF9909004AD5B1 /* Lab0 Swift */,
-				48ABE2672AC3FA9D0088787F /* Lab1 Swift */,
+				48D4FCE42AAF9909004AD5B1 /* OOP Swift */,
 				48D4FCE32AAF9909004AD5B1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,12 +58,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		48D4FCE42AAF9909004AD5B1 /* Lab0 Swift */ = {
+		48D4FCE42AAF9909004AD5B1 /* OOP Swift */ = {
 			isa = PBXGroup;
 			children = (
 				48D4FCE52AAF9909004AD5B1 /* main.swift */,
+				486D3A3C2ACAFFA800902B21 /* Lab0.swift */,
+				486D3A3E2ACB013700902B21 /* Lab1.swift */,
 			);
-			path = "Lab0 Swift";
+			path = "OOP Swift";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +126,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				486D3A3D2ACAFFA800902B21 /* Lab0.swift in Sources */,
+				486D3A3F2ACB013700902B21 /* Lab1.swift in Sources */,
 				48D4FCE62AAF9909004AD5B1 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
