@@ -62,4 +62,3 @@ func displayGraduatedStudents() {
     print("Press Enter to return to the main menu")
     _ = readLine()
 }
-

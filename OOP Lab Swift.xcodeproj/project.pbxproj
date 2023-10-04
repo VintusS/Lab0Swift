@@ -54,10 +54,10 @@
 			isa = PBXGroup;
 			children = (
 				486D3A3E2ACB013700902B21 /* lab1_main.swift */,
-				481CAD7A2ACD465F00DC92C5 /* StudentManagement.swift */,
 				481CAD7C2ACD469200DC92C5 /* CreateFaculty.swift */,
 				481CAD7E2ACD46D200DC92C5 /* StudentOptions.swift */,
 				481CAD802ACD46F600DC92C5 /* DisplayInfo.swift */,
+				481CAD7A2ACD465F00DC92C5 /* StudentManagement.swift */,
 			);
 			path = Lab1;
 			sourceTree = "<group>";

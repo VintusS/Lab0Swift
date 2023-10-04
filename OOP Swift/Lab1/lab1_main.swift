@@ -36,7 +36,7 @@ func lab1() {
                 print("b - Back")
                 print("q - Quit Program")
                 print()
-                print("your input>", terminator: "")
+                print("your input>", terminator: " ")
                 if let choice = readLine() {
                     switch choice {
                     case "1":
@@ -52,11 +52,23 @@ func lab1() {
                         print("3. Food Technology")
                         print("4. Urbanism Architecture")
                         print("5. Veterinary Medicine")
-                        if let fieldChoice = readLine(), let field = StudyField(rawValue: fieldChoice) {
-                            displayFacultiesByField(field: field)
+
+                        if let fieldChoice = readLine(), let fieldInt = Int(fieldChoice), let field = studyFieldFromInt(fieldInt) {
+                            print("Faculties in \(field.rawValue):")
+                            for faculty in faculties.values {
+                                if faculty.studyField == field {
+                                    print("Name: \(faculty.name), Abbreviation: \(faculty.abbreviation)")
+                                }
+                            }
                         } else {
                             print("Invalid field choice.")
                         }
+                    case "b":
+                        lab1()
+                    case "q":
+                        print("Quitting...")
+                        flag = false
+                        exit(0)
                     default:
                         print("Invalid choice.")
                     }
@@ -75,7 +87,7 @@ func lab1() {
                     print("b - Back")
                     print("q - Quit Program")
                     print()
-                    print("your input>", terminator: "")
+                    print("your input>", terminator: " ")
                     if let choice = readLine() {
                         switch choice {
                         case "1":
@@ -88,6 +100,13 @@ func lab1() {
                             displayGraduatedStudents()
                         case "5":
                             checkIfStudentBelongsToFaculty()
+                        case "b":
+                            lab1()
+                        case "q":
+                            print("Quitting...")
+                            flag = false
+                            exit(0)
+                            
                         default:
                             print("Invalid choice.")
                         }
@@ -103,13 +122,19 @@ func lab1() {
                     print("b - Back")
                     print("q - Quit Program")
                     print()
-                    print("your input>", terminator: "")
+                    print("your input>", terminator: " ")
                     if let choice = readLine() {
                         switch choice {
                         case "1":
                             createStudent()
                         case "2":
                             updateStudentInformation()
+                        case "b":
+                            lab1()
+                        case "q":
+                            print("Quitting...")
+                            flag = false
+                            exit(0)
                         default:
                             print("Invalid choice.")
                         }
