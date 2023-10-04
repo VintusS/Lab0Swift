@@ -1,6 +1,6 @@
 //
 //  CreateFaculty.swift
-//  Lab1 Swift
+//  Lab0 Swift
 //
 //  Created by Dragosh on 04.10.2023.
 //

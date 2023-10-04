@@ -1,6 +1,6 @@
 //
 //  SearchStudent.swift
-//  Lab1 Swift
+//  Lab0 Swift
 //
 //  Created by Dragosh on 04.10.2023.
 //
@@ -31,18 +31,13 @@ func createStudentAndAssignToFaculty() {
             if let lastName = readLine() {
                 print("Enter student email:")
                 if let email = readLine() {
-                    print("Enter student ID:")
-                    if let studentIDInput = readLine(), let studentID = Int(studentIDInput) {
-                        if Student.findStudentByID(studentID) == nil {
-                            let student = Student(id: studentID, firstName: firstName, lastName: lastName, email: email, enrollmentDate: Date(day: 1, month: 1, year: 2023), dateOfBirth: Date(day: 1, month: 1, year: 2000))
-                            student.id = studentID
-
-                            faculty.students.append(student)
-                            
-                            print("Student created successfully and assigned to \(faculty.name) faculty.")
-                        } else {
-                            print("Student ID \(studentID) is not unique.")
-                        }
+                    print("Enter student ID:")  // Added this line
+                    if let studentID = readLine() {  // Read student ID
+                        let student = Student(studentID: studentID, firstName: firstName, lastName: lastName, email: email, enrollmentDate: Date(day: 1, month: 1, year: 2023), dateOfBirth: Date(day: 1, month: 1, year: 2000))
+                        
+                        faculty.students.append(student)
+                        
+                        print("Student created and assigned to \(faculty.name) faculty.")
                     } else {
                         print("Invalid input for student ID.")
                     }
@@ -59,8 +54,6 @@ func createStudentAndAssignToFaculty() {
         print("Faculty not found.")
     }
 }
-
-
 
 
 func graduateStudentFromFaculty() {
@@ -101,98 +94,77 @@ func checkIfStudentBelongsToFaculty() {
 }
 
 func createStudent() {
-    print("Enter student ID:")
-    if let studentIDInput = readLine(), let studentID = Int(studentIDInput) {
-        if Student.findStudentByID(studentID) != nil {
-            print("Student with ID \(studentID) already exists.")
-        } else {
-            print("Enter student first name:")
-            if let firstName = readLine() {
-                print("Enter student last name:")
-                if let lastName = readLine() {
-                    print("Enter student email:")
-                    if let email = readLine() {
-                        print("Choose a faculty for the student:")
-                        for (index, faculty) in faculties.values.enumerated() {
-                            print("\(index + 1). \(faculty.name)")
-                        }
-                        if let facultyChoice = readLine(), let facultyIndex = Int(facultyChoice) {
-                            let facultyArray = Array(faculties.values)
-                            if facultyIndex >= 1 && facultyIndex <= facultyArray.count {
-                                let selectedFaculty = facultyArray[facultyIndex - 1]
-                                let student = Student(id: studentID, firstName: firstName, lastName: lastName, email: email, enrollmentDate: Date(day: 1, month: 1, year: 2023), dateOfBirth: Date(day: 1, month: 1, year: 2000))
-                                selectedFaculty.students.append(student)
-                                
-                                print("Student created successfully and assigned to \(selectedFaculty.name) faculty.")
-                            } else {
-                                print("Invalid faculty choice.")
-                            }
-                        } else {
-                            print("Invalid input for faculty choice.")
-                        }
+    print("Enter student first name:")
+    if let firstName = readLine() {
+        print("Enter student last name:")
+        if let lastName = readLine() {
+            print("Enter student email:")
+            if let email = readLine() {
+                print("Choose a faculty for the student:")
+                for (index, faculty) in faculties.values.enumerated() {
+                    print("\(index + 1). \(faculty.name)")
+                }
+                if let facultyChoice = readLine(), let facultyIndex = Int(facultyChoice) {
+                    let facultyArray = Array(faculties.values)
+                    if facultyIndex >= 1 && facultyIndex <= facultyArray.count {
+                        let selectedFaculty = facultyArray[facultyIndex - 1]
+                        
+                        // Collect additional student information, e.g., date of birth, enrollment date
+                        // Create a new student object
+                        let student = Student(studentID: "", firstName: firstName, lastName: lastName, email: email, enrollmentDate: Date(day: 1, month: 1, year: 2023), dateOfBirth: Date(day: 1, month: 1, year: 2000))
+                        
+                        // Add the student to the selected faculty's students array
+                        selectedFaculty.students.append(student)
+                        
+                        print("Student created successfully and assigned to \(selectedFaculty.name) faculty.")
                     } else {
-                        print("Invalid input for student email.")
+                        print("Invalid faculty choice.")
                     }
                 } else {
-                    print("Invalid input for student last name.")
+                    print("Invalid input for faculty choice.")
                 }
             } else {
-                print("Invalid input for student first name.")
-            }
-        }
-    } else {
-        print("Invalid input for student ID.")
-    }
-}
-
-
-func updateStudentInformation() {
-    print("Enter student ID to update:")
-    if let studentIDInput = readLine(), let studentID = Int(studentIDInput) {
-        print("Enter updated first name (or press Enter to skip):")
-        let updatedFirstName = readLine()
-
-        print("Enter updated last name (or press Enter to skip):")
-        let updatedLastName = readLine()
-
-        print("Enter updated email (or press Enter to skip):")
-        let updatedEmail = readLine()
-
-        print("Enter updated student ID (or press Enter to skip):")
-        if let updatedStudentIDInput = readLine(), let updatedStudentID = Int(updatedStudentIDInput) {
-            if Student.updateStudentInformation(id: studentID, updatedFirstName: updatedFirstName, updatedLastName: updatedLastName, updatedEmail: updatedEmail, updatedStudentID: updatedStudentID) {
-                print("Student information updated successfully.")
-            } else {
-                print("Student with ID \(studentID) not found.")
+                print("Invalid input for student email.")
             }
         } else {
-            if Student.updateStudentInformation(id: studentID, updatedFirstName: updatedFirstName, updatedLastName: updatedLastName, updatedEmail: updatedEmail) {
-                print("Student information updated successfully.")
-            } else {
-                print("Student with ID \(studentID) not found.")
-            }
+            print("Invalid input for student last name.")
         }
     } else {
-        print("Invalid input for student ID.")
+        print("Invalid input for student first name.")
     }
 }
 
-
-func searchStudentByID() {
-    print("Enter student ID:")
-    if let studentIDInput = readLine(), let studentID = Int(studentIDInput) {
-        for faculty in faculties.values {
-            if let student = Student.findStudentByID(studentID) {
-                print("Student found in \(faculty.name) faculty:")
-                print("ID: \(student.id)")
-                print("Name: \(student.firstName) \(student.lastName)")
-                print("Email: \(student.email)")
+func updateStudentInformation() {
+    print("Enter student email to update:")
+    if let studentEmail = readLine() {
+        
+        for (_, faculty) in faculties {
+            if let studentIndex = faculty.students.firstIndex(where: { $0.email == studentEmail }) {
+                var student = faculty.students[studentIndex]
+                
+                print("Enter updated first name (or press Enter to skip):")
+                if let updatedFirstName = readLine(), !updatedFirstName.isEmpty {
+                    student.firstName = updatedFirstName
+                }
+                
+                print("Enter updated last name (or press Enter to skip):")
+                if let updatedLastName = readLine(), !updatedLastName.isEmpty {
+                    student.lastName = updatedLastName
+                }
+                
+                print("Enter updated email (or press Enter to skip):")
+                if let updatedEmail = readLine(), !updatedEmail.isEmpty {
+                    student.email = updatedEmail
+                }
+                
+                faculty.students[studentIndex] = student
+                
+                print("Student information updated successfully.")
                 return
             }
         }
-        print("Student with ID \(studentID) not found.")
+        print("Student with email \(studentEmail) not found.")
     } else {
-        print("Invalid input for student ID.")
+        print("Invalid input for student email.")
     }
 }
-

@@ -13,7 +13,6 @@
 		481CAD812ACD46F600DC92C5 /* DisplayInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481CAD802ACD46F600DC92C5 /* DisplayInfo.swift */; };
 		486D3A3D2ACAFFA800902B21 /* Lab0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D3A3C2ACAFFA800902B21 /* Lab0.swift */; };
 		486D3A3F2ACB013700902B21 /* lab1_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D3A3E2ACB013700902B21 /* lab1_main.swift */; };
-		48AE24F12ACD6AE300B5D86F /* SaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE24F02ACD6AE300B5D86F /* SaveManager.swift */; };
 		48D4FCE62AAF9909004AD5B1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D4FCE52AAF9909004AD5B1 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +35,6 @@
 		481CAD802ACD46F600DC92C5 /* DisplayInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayInfo.swift; sourceTree = "<group>"; };
 		486D3A3C2ACAFFA800902B21 /* Lab0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab0.swift; sourceTree = "<group>"; };
 		486D3A3E2ACB013700902B21 /* lab1_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lab1_main.swift; sourceTree = "<group>"; };
-		48AE24F02ACD6AE300B5D86F /* SaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveManager.swift; sourceTree = "<group>"; };
 		48D4FCE22AAF9909004AD5B1 /* Lab0 Swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Lab0 Swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D4FCE52AAF9909004AD5B1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,7 +58,6 @@
 				481CAD7C2ACD469200DC92C5 /* CreateFaculty.swift */,
 				481CAD7E2ACD46D200DC92C5 /* StudentOptions.swift */,
 				481CAD802ACD46F600DC92C5 /* DisplayInfo.swift */,
-				48AE24F02ACD6AE300B5D86F /* SaveManager.swift */,
 			);
 			path = Lab1;
 			sourceTree = "<group>";
@@ -155,7 +152,6 @@
 				481CAD812ACD46F600DC92C5 /* DisplayInfo.swift in Sources */,
 				481CAD7B2ACD465F00DC92C5 /* StudentManagement.swift in Sources */,
 				48D4FCE62AAF9909004AD5B1 /* main.swift in Sources */,
-				48AE24F12ACD6AE300B5D86F /* SaveManager.swift in Sources */,
 				481CAD7D2ACD469200DC92C5 /* CreateFaculty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
