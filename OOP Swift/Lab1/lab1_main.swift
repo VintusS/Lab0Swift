@@ -8,9 +8,10 @@
 import Foundation
 
 var faculties: [String: Faculty] = [:]
+var flag = true
 
 func lab1() {
-    while true {
+    while flag {
         print("Welcome to TUM's student management system!")
         print("What do you want to do?")
         print("g - General Operations")
@@ -115,6 +116,7 @@ func lab1() {
                     }
             case "q":
                 print("Quitting...")
+                flag = false
                 exit(0)
             default:
                 print("Unrecognized input: \(input)")
