@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		481CAD7B2ACD465F00DC92C5 /* StudentManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481CAD7A2ACD465F00DC92C5 /* StudentManagement.swift */; };
+		481CAD7D2ACD469200DC92C5 /* CreateFaculty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481CAD7C2ACD469200DC92C5 /* CreateFaculty.swift */; };
+		481CAD7F2ACD46D200DC92C5 /* StudentOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481CAD7E2ACD46D200DC92C5 /* StudentOptions.swift */; };
+		481CAD812ACD46F600DC92C5 /* DisplayInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481CAD802ACD46F600DC92C5 /* DisplayInfo.swift */; };
 		486D3A3D2ACAFFA800902B21 /* Lab0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D3A3C2ACAFFA800902B21 /* Lab0.swift */; };
-		486D3A3F2ACB013700902B21 /* Lab1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D3A3E2ACB013700902B21 /* Lab1.swift */; };
+		486D3A3F2ACB013700902B21 /* lab1_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D3A3E2ACB013700902B21 /* lab1_main.swift */; };
 		48D4FCE62AAF9909004AD5B1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D4FCE52AAF9909004AD5B1 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,8 +29,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		481CAD7A2ACD465F00DC92C5 /* StudentManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentManagement.swift; sourceTree = "<group>"; };
+		481CAD7C2ACD469200DC92C5 /* CreateFaculty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFaculty.swift; sourceTree = "<group>"; };
+		481CAD7E2ACD46D200DC92C5 /* StudentOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentOptions.swift; sourceTree = "<group>"; };
+		481CAD802ACD46F600DC92C5 /* DisplayInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayInfo.swift; sourceTree = "<group>"; };
 		486D3A3C2ACAFFA800902B21 /* Lab0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab0.swift; sourceTree = "<group>"; };
-		486D3A3E2ACB013700902B21 /* Lab1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab1.swift; sourceTree = "<group>"; };
+		486D3A3E2ACB013700902B21 /* lab1_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lab1_main.swift; sourceTree = "<group>"; };
 		48D4FCE22AAF9909004AD5B1 /* Lab0 Swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Lab0 Swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D4FCE52AAF9909004AD5B1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -42,6 +50,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		481CAD792ACD45E400DC92C5 /* Lab1 */ = {
+			isa = PBXGroup;
+			children = (
+				486D3A3E2ACB013700902B21 /* lab1_main.swift */,
+				481CAD7A2ACD465F00DC92C5 /* StudentManagement.swift */,
+				481CAD7C2ACD469200DC92C5 /* CreateFaculty.swift */,
+				481CAD7E2ACD46D200DC92C5 /* StudentOptions.swift */,
+				481CAD802ACD46F600DC92C5 /* DisplayInfo.swift */,
+			);
+			path = Lab1;
+			sourceTree = "<group>";
+		};
 		48D4FCD92AAF9909004AD5B1 = {
 			isa = PBXGroup;
 			children = (
@@ -63,7 +83,7 @@
 			children = (
 				48D4FCE52AAF9909004AD5B1 /* main.swift */,
 				486D3A3C2ACAFFA800902B21 /* Lab0.swift */,
-				486D3A3E2ACB013700902B21 /* Lab1.swift */,
+				481CAD792ACD45E400DC92C5 /* Lab1 */,
 			);
 			path = "OOP Swift";
 			sourceTree = "<group>";
@@ -127,8 +147,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				486D3A3D2ACAFFA800902B21 /* Lab0.swift in Sources */,
-				486D3A3F2ACB013700902B21 /* Lab1.swift in Sources */,
+				481CAD7F2ACD46D200DC92C5 /* StudentOptions.swift in Sources */,
+				486D3A3F2ACB013700902B21 /* lab1_main.swift in Sources */,
+				481CAD812ACD46F600DC92C5 /* DisplayInfo.swift in Sources */,
+				481CAD7B2ACD465F00DC92C5 /* StudentManagement.swift in Sources */,
 				48D4FCE62AAF9909004AD5B1 /* main.swift in Sources */,
+				481CAD7D2ACD469200DC92C5 /* CreateFaculty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
