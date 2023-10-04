@@ -1,6 +1,6 @@
 //
 //  DisplayInfo.swift
-//  Lab0 Swift
+//  Lab1 Swift
 //
 //  Created by Dragosh on 04.10.2023.
 //
@@ -29,7 +29,7 @@ func displayEnrolledStudents() {
         if !faculty.students.isEmpty {
             print("Currently enrolled students in \(faculty.name):")
             for student in faculty.students {
-                print("Name: \(student.firstName) \(student.lastName), Email: \(student.email)")
+                print("ID: \(student.id), Name: \(student.firstName) \(student.lastName), Email: \(student.email)")
             }
         } else {
             print("No enrolled students in \(faculty.name).")
@@ -41,6 +41,7 @@ func displayEnrolledStudents() {
     print("Press Enter to return to the main menu")
     _ = readLine()
 }
+
 
 func displayGraduatedStudents() {
     print("Enter faculty abbreviation:")
