@@ -5,11 +5,6 @@
 //  Created by Dragosh on 19.09.2023.
 //
 
-let grade: Character = "A"
-let isNoon: Bool = false
-let arr: [Int] = [9, 2, 19]
-var group: String = "OOP"
-
 class Car {
     var speed: Float = 0
     var isMoving: Bool = false

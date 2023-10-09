@@ -31,8 +31,8 @@ func createStudentAndAssignToFaculty() {
             if let lastName = readLine() {
                 print("Enter student email:")
                 if let email = readLine() {
-                    print("Enter student ID:")  // Added this line
-                    if let studentID = readLine() {  // Read student ID
+                    print("Enter student ID:")
+                    if let studentID = readLine() {
                         let student = Student(studentID: studentID, firstName: firstName, lastName: lastName, email: email, enrollmentDate: Date(day: 1, month: 1, year: 2023), dateOfBirth: Date(day: 1, month: 1, year: 2000))
                         
                         faculty.students.append(student)
@@ -108,12 +108,7 @@ func createStudent() {
                     let facultyArray = Array(faculties.values)
                     if facultyIndex >= 1 && facultyIndex <= facultyArray.count {
                         let selectedFaculty = facultyArray[facultyIndex - 1]
-                        
-                        // Collect additional student information, e.g., date of birth, enrollment date
-                        // Create a new student object
                         let student = Student(studentID: "", firstName: firstName, lastName: lastName, email: email, enrollmentDate: Date(day: 1, month: 1, year: 2023), dateOfBirth: Date(day: 1, month: 1, year: 2000))
-                        
-                        // Add the student to the selected faculty's students array
                         selectedFaculty.students.append(student)
                         
                         print("Student created successfully and assigned to \(selectedFaculty.name) faculty.")
@@ -140,7 +135,7 @@ func updateStudentInformation() {
         
         for (_, faculty) in faculties {
             if let studentIndex = faculty.students.firstIndex(where: { $0.email == studentEmail }) {
-                var student = faculty.students[studentIndex]
+                let student = faculty.students[studentIndex]
                 
                 print("Enter updated first name (or press Enter to skip):")
                 if let updatedFirstName = readLine(), !updatedFirstName.isEmpty {
