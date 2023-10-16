@@ -33,11 +33,11 @@ func createStudentAndAssignToFaculty() {
                 if let email = readLine() {
                     print("Enter student ID:")
                     if let studentID = readLine() {
-                        let student = Student(studentID: studentID, firstName: firstName, lastName: lastName, email: email, enrollmentDate: Date(day: 1, month: 1, year: 2023), dateOfBirth: Date(day: 1, month: 1, year: 2000))
-                        
-                        faculty.students.append(student)
-                        
-                        print("Student created and assigned to \(faculty.name) faculty.")
+                            let student = Student(studentID: studentID, firstName: firstName, lastName: lastName, email: email, enrollmentDate: Date(day: 2, month: 10, year: 2023), dateOfBirth: Date(day: 3, month: 12, year: 2003))
+                            
+                            faculty.students.append(student)
+                            
+                            print("Student created and assigned to \(faculty.name) faculty.")
                     } else {
                         print("Invalid input for student ID.")
                     }
