@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Date {
+class DayOfTheYear {
     var day: Int
     var month: Int
     var year: Int
@@ -23,11 +23,11 @@ class Student {
     var firstName: String
     var lastName: String
     var email: String
-    var enrollmentDate: Date
-    var dateOfBirth: Date
+    var enrollmentDate: DayOfTheYear
+    var dateOfBirth: DayOfTheYear
     var graduated: Bool
 
-    init(studentID: String, firstName: String, lastName: String, email: String, enrollmentDate: Date, dateOfBirth: Date) {
+    init(studentID: String, firstName: String, lastName: String, email: String, enrollmentDate: DayOfTheYear, dateOfBirth: DayOfTheYear) {
         self.studentID = studentID
         self.firstName = firstName
         self.lastName = lastName

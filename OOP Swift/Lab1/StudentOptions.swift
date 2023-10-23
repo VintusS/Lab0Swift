@@ -33,7 +33,7 @@ func createStudentAndAssignToFaculty() {
                 if let email = readLine() {
                     print("Enter student ID:")
                     if let studentID = readLine() {
-                            let student = Student(studentID: studentID, firstName: firstName, lastName: lastName, email: email, enrollmentDate: Date(day: 2, month: 10, year: 2023), dateOfBirth: Date(day: 3, month: 12, year: 2003))
+                            let student = Student(studentID: studentID, firstName: firstName, lastName: lastName, email: email, enrollmentDate: DayOfTheYear(day: 2, month: 10, year: 2023), dateOfBirth: DayOfTheYear(day: 3, month: 12, year: 2003))
                             
                             faculty.students.append(student)
                             
@@ -108,7 +108,7 @@ func createStudent() {
                     let facultyArray = Array(faculties.values)
                     if facultyIndex >= 1 && facultyIndex <= facultyArray.count {
                         let selectedFaculty = facultyArray[facultyIndex - 1]
-                        let student = Student(studentID: "", firstName: firstName, lastName: lastName, email: email, enrollmentDate: Date(day: 1, month: 1, year: 2023), dateOfBirth: Date(day: 1, month: 1, year: 2000))
+                        let student = Student(studentID: "", firstName: firstName, lastName: lastName, email: email, enrollmentDate: DayOfTheYear(day: 1, month: 1, year: 2023), dateOfBirth: DayOfTheYear(day: 1, month: 1, year: 2000))
                         selectedFaculty.students.append(student)
                         
                         print("Student created successfully and assigned to \(selectedFaculty.name) faculty.")
