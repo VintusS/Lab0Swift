@@ -45,3 +45,12 @@ func copyHashToTextFile(_ content: String, filePath: String) {
         print("Error copying string to \(filePath): \(error)")
     }
 }
+
+func imageNameReturn() -> String{
+    let filePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit/image.jpg"
+    var fileName = ""
+    if let url = URL(string: filePath) {
+        fileName = url.lastPathComponent
+    }
+    return fileName
+}

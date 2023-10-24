@@ -21,6 +21,7 @@ func lab2() {
     let sourceFolder = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit"
     let destinationFolder = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot"
     let snapshotImagePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot/snapshotimagehash.txt"
+    let imageName = imageNameReturn()
     
     
     while flag0 {
@@ -44,7 +45,8 @@ func lab2() {
                 let (snapshotTextContent, snapshotSwiftContent, snapshotPythonContent, snapshotJavaContent, _) = readSnapshotFiles()
                 let currentImageContent = generateImageHash(imagePath)
                 let snapshotImageHash = readTextFileToString(filePath: snapshotImagePath)
-                print("Created Snapshot: ")
+                guard let snapshotCreationTime = readTextFileToString(filePath: snapshotTimePath) else { return }
+                print("Created Snapshot: " + snapshotCreationTime)
                 if currentTextContent == snapshotTextContent {
                     print(textFileName + ":" + " Not changed")
                 } else {
@@ -66,9 +68,11 @@ func lab2() {
                     print(javaFileName + ":" + " Changed")
                 }
                 if snapshotImageHash == imageContent {
-                    print("image.png: Not changed")
+                    print(imageName + ": Not changed")
+                    print()
                 } else {
-                    print("image.png: Changed")
+                    print(imageName + ": Changed")
+                    print()
                 }
             case "vin exit":
                 flag0 = false
