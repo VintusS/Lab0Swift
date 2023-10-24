@@ -14,12 +14,13 @@ func lab2() {
     let imagePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit/image.jpg"
     let snapshotTimePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot/snapshotCreationTime.txt"
     var (textContent, swiftContent, pythonContent, javaContent, fileNames) = readFiles()
-    let imageContent = generateImageHash(imagePath)
+    guard let imageContent = generateImageHash(imagePath) else { return }
     var (textFileName, swiftFileName, pythonFileName, javaFileName) = fileNames
     let (snapshotTextContent, snapshotSwiftContent, snapshotPythonContent, snapshotJavaContent, snapshotFileNames) = readSnapshotFiles()
     let currentTime = getCurrentTime()
     let sourceFolder = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit"
     let destinationFolder = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot"
+    let snapshotImagePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot/snapshotimagehash.txt"
     
     
     while flag0 {
@@ -33,6 +34,7 @@ func lab2() {
                 copyFiles(from: sourceFolder, to: destinationFolder)
                 changeSnapshotCreationTime()
                 (textContent, swiftContent, pythonContent, javaContent, fileNames) = readFiles()
+                copyHashToTextFile(imageContent, filePath: snapshotImagePath)
                 print("Commited")
                 print()
             case "vin info":

@@ -30,3 +30,18 @@ func changeSnapshotCreationTime() {
         print("Error updating snapshot creation time: \(error)")
     }
 }
+
+func copyHashToTextFile(_ content: String, filePath: String) {
+    do {
+        try "".write(toFile: filePath, atomically: false, encoding: .utf8)
+        
+        if let data = content.data(using: .utf8) {
+            let fileHandle = try FileHandle(forWritingTo: URL(fileURLWithPath: filePath))
+            fileHandle.seekToEndOfFile()
+            fileHandle.write(data)
+            fileHandle.closeFile()
+        }
+    } catch {
+        print("Error copying string to \(filePath): \(error)")
+    }
+}

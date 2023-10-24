@@ -93,6 +93,14 @@
 			path = Lab1;
 			sourceTree = "<group>";
 		};
+		481E62E92AE7FFDE005D058E /* Lab0 */ = {
+			isa = PBXGroup;
+			children = (
+				486D3A3C2ACAFFA800902B21 /* Lab0.swift */,
+			);
+			path = Lab0;
+			sourceTree = "<group>";
+		};
 		48D4FCD92AAF9909004AD5B1 = {
 			isa = PBXGroup;
 			children = (
@@ -113,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				48D4FCE52AAF9909004AD5B1 /* main.swift */,
-				486D3A3C2ACAFFA800902B21 /* Lab0.swift */,
+				481E62E92AE7FFDE005D058E /* Lab0 */,
 				481CAD792ACD45E400DC92C5 /* Lab1 */,
 				480D766C2ADD3285000C0495 /* Lab2 */,
 			);
