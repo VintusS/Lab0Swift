@@ -43,6 +43,7 @@ func lab2() {
                 let (currentTextContent, currentSwiftContent, currentPythonContent, currentJavaContent, _) = readFiles()
                 let (snapshotTextContent, snapshotSwiftContent, snapshotPythonContent, snapshotJavaContent, _) = readSnapshotFiles()
                 let currentImageContent = generateImageHash(imagePath)
+                let snapshotImageHash = readTextFileToString(filePath: snapshotImagePath)
                 print("Created Snapshot: ")
                 if currentTextContent == snapshotTextContent {
                     print(textFileName + ":" + " Not changed")
@@ -61,10 +62,13 @@ func lab2() {
                 }
                 if currentJavaContent == snapshotJavaContent {
                     print(javaFileName + ":" + " Not changed")
-                    print()
                 } else {
                     print(javaFileName + ":" + " Changed")
-                    print()
+                }
+                if snapshotImageHash == imageContent {
+                    print("image.png: Not changed")
+                } else {
+                    print("image.png: Changed")
                 }
             case "vin exit":
                 flag0 = false
