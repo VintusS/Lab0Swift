@@ -23,15 +23,3 @@ func imageContentChanged(_ imagePath: String, _ previousHash: String? = nil) -> 
         return true
     }
 }
-
-//// Example usage:
-//let imagePath = "/path/to/your/image.jpg"  // Replace with the actual image file path
-//
-//// Check if the image content hash changed
-//let previousHash: String? = "previous_hash_value"  // Replace with the previous hash, if available
-//if imageContentChanged(imagePath, previousHash) {
-//    print("Image content has changed.")
-//} else {
-//    print("Image content has not changed.")
-//}
-
