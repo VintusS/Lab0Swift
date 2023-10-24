@@ -100,10 +100,10 @@ func readFiles() -> (String, String, String, String, (String, String, String, St
 }
 
 func readSnapshotFiles() -> (String, String, String, String, (String, String, String, String)) {
-    let textFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot/snapshot.txt"
-    let swiftFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot/snapshot.swift"
-    let pythonFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot/snapshot.py"
-    let javaFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot/snapshot.java"
+    let textFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot/git_test.txt"
+    let swiftFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot/git_test.swift"
+    let pythonFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot/git_test.py"
+    let javaFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot/git_test.java"
 
     let textReader = TextFileReader(filePath: textFilePath)
     let swiftReader = SwiftFileReader(filePath: swiftFilePath)
