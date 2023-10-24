@@ -12,12 +12,11 @@
 		481CAD7D2ACD469200DC92C5 /* CreateFaculty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481CAD7C2ACD469200DC92C5 /* CreateFaculty.swift */; };
 		481CAD7F2ACD46D200DC92C5 /* StudentOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481CAD7E2ACD46D200DC92C5 /* StudentOptions.swift */; };
 		481CAD812ACD46F600DC92C5 /* DisplayInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481CAD802ACD46F600DC92C5 /* DisplayInfo.swift */; };
-		4847F9B92AE68B370060D6C3 /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847F9B82AE68B370060D6C3 /* Snapshot.swift */; };
-		4847F9BB2AE68B430060D6C3 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847F9BA2AE68B430060D6C3 /* File.swift */; };
-		4847F9BD2AE68B500060D6C3 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847F9BC2AE68B500060D6C3 /* Folder.swift */; };
+		481E62DA2AE78F94005D058E /* fileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E62D92AE78F94005D058E /* fileReader.swift */; };
+		481E62DC2AE793F9005D058E /* imageChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E62DB2AE793F9005D058E /* imageChange.swift */; };
+		481E62DE2AE794AE005D058E /* generateImageHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E62DD2AE794AE005D058E /* generateImageHash.swift */; };
 		486D3A3D2ACAFFA800902B21 /* Lab0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D3A3C2ACAFFA800902B21 /* Lab0.swift */; };
 		486D3A3F2ACB013700902B21 /* lab1_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D3A3E2ACB013700902B21 /* lab1_main.swift */; };
-		486DC5822AE6B33100D4A116 /* git_test.java in Sources */ = {isa = PBXBuildFile; fileRef = 486DC5812AE6B33100D4A116 /* git_test.java */; };
 		48D4FCE62AAF9909004AD5B1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D4FCE52AAF9909004AD5B1 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,18 +34,15 @@
 
 /* Begin PBXFileReference section */
 		480D766D2ADD357D000C0495 /* lab2_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lab2_main.swift; sourceTree = "<group>"; };
-		480D766F2ADD3626000C0495 /* lorem.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = lorem.txt; sourceTree = "<group>"; };
 		481CAD7A2ACD465F00DC92C5 /* StudentManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentManagement.swift; sourceTree = "<group>"; };
 		481CAD7C2ACD469200DC92C5 /* CreateFaculty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFaculty.swift; sourceTree = "<group>"; };
 		481CAD7E2ACD46D200DC92C5 /* StudentOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentOptions.swift; sourceTree = "<group>"; };
 		481CAD802ACD46F600DC92C5 /* DisplayInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayInfo.swift; sourceTree = "<group>"; };
-		4847F9B82AE68B370060D6C3 /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
-		4847F9BA2AE68B430060D6C3 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
-		4847F9BC2AE68B500060D6C3 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
+		481E62D92AE78F94005D058E /* fileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fileReader.swift; sourceTree = "<group>"; };
+		481E62DB2AE793F9005D058E /* imageChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageChange.swift; sourceTree = "<group>"; };
+		481E62DD2AE794AE005D058E /* generateImageHash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generateImageHash.swift; sourceTree = "<group>"; };
 		486D3A3C2ACAFFA800902B21 /* Lab0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab0.swift; sourceTree = "<group>"; };
 		486D3A3E2ACB013700902B21 /* lab1_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lab1_main.swift; sourceTree = "<group>"; };
-		486DC5802AE6B31300D4A116 /* git_test.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = git_test.py; sourceTree = "<group>"; };
-		486DC5812AE6B33100D4A116 /* git_test.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = git_test.java; sourceTree = "<group>"; };
 		48D4FCE22AAF9909004AD5B1 /* Lab0 Swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Lab0 Swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D4FCE52AAF9909004AD5B1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,12 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				480D766D2ADD357D000C0495 /* lab2_main.swift */,
-				4847F9B82AE68B370060D6C3 /* Snapshot.swift */,
-				480D766F2ADD3626000C0495 /* lorem.txt */,
-				486DC5802AE6B31300D4A116 /* git_test.py */,
-				486DC5812AE6B33100D4A116 /* git_test.java */,
-				4847F9BA2AE68B430060D6C3 /* File.swift */,
-				4847F9BC2AE68B500060D6C3 /* Folder.swift */,
+				481E62D92AE78F94005D058E /* fileReader.swift */,
+				481E62DB2AE793F9005D058E /* imageChange.swift */,
+				481E62DD2AE794AE005D058E /* generateImageHash.swift */,
 			);
 			path = Lab2;
 			sourceTree = "<group>";
@@ -173,17 +166,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				486DC5822AE6B33100D4A116 /* git_test.java in Sources */,
 				486D3A3D2ACAFFA800902B21 /* Lab0.swift in Sources */,
 				481CAD7F2ACD46D200DC92C5 /* StudentOptions.swift in Sources */,
+				481E62DE2AE794AE005D058E /* generateImageHash.swift in Sources */,
 				486D3A3F2ACB013700902B21 /* lab1_main.swift in Sources */,
+				481E62DC2AE793F9005D058E /* imageChange.swift in Sources */,
 				481CAD812ACD46F600DC92C5 /* DisplayInfo.swift in Sources */,
-				4847F9BD2AE68B500060D6C3 /* Folder.swift in Sources */,
 				481CAD7B2ACD465F00DC92C5 /* StudentManagement.swift in Sources */,
-				4847F9BB2AE68B430060D6C3 /* File.swift in Sources */,
 				48D4FCE62AAF9909004AD5B1 /* main.swift in Sources */,
-				4847F9B92AE68B370060D6C3 /* Snapshot.swift in Sources */,
 				481CAD7D2ACD469200DC92C5 /* CreateFaculty.swift in Sources */,
+				481E62DA2AE78F94005D058E /* fileReader.swift in Sources */,
 				480D766E2ADD357D000C0495 /* lab2_main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

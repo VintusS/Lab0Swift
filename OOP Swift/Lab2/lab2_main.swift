@@ -8,37 +8,20 @@
 import Foundation
 
 func lab2() {
-    let folderPath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/OOP Swift/Lab2" // Update the folder path
-    let snapshot = Snapshot()
-    let folder = Folder(path: folderPath)
+    let folderPath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit"
+    let contents = readFilesInFolder(atPath: folderPath)
+    for (fileName, fileContent) in contents {
+        print("File: \(fileName)")
+    }
     
-    while true {
-        print("Enter a command (commit, info <filename>, status, or exit):")
-        if let input = readLine() {
-            let parts = input.components(separatedBy: " ")
-            let command = parts[0]
-            switch command {
-            case "commit":
-                snapshot.commit()
-            case "info":
-                if parts.count == 2 {
-                    let filename = parts[1]
-                    // Find the corresponding file in the 'files' array
-                    if let file = folder.files.first(where: { $0.name == filename }) {
-                        file.info()
-                    } else {
-                        print("File not found.")
-                    }
-                } else {
-                    print("Invalid 'info' command. Usage: info <filename>")
-                }
-            case "status":
-                snapshot.status()
-            case "exit":
-                exit(0)
-            default:
-                print("Invalid command. Available commands: commit, info, status, exit")
-            }
-        }
+    // Example usage:
+    let imagePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit/image.jpg"
+
+    // Check if the image content hash changed
+    let previousHash: String? =  generateImageHash(imagePath) // Replace with the previous hash, if available
+    if imageContentChanged(imagePath, previousHash) {
+        print("Image content has changed.")
+    } else {
+        print("Image content has not changed.")
     }
 }
