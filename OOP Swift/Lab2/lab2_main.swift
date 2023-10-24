@@ -16,13 +16,16 @@ func lab2() {
     var (textContent, swiftContent, pythonContent, javaContent, fileNames) = readFiles()
     guard let imageContent = generateImageHash(imagePath) else { return }
     var (textFileName, swiftFileName, pythonFileName, javaFileName) = fileNames
-    let (snapshotTextContent, snapshotSwiftContent, snapshotPythonContent, snapshotJavaContent, snapshotFileNames) = readSnapshotFiles()
-    let currentTime = getCurrentTime()
     let sourceFolder = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit"
     let destinationFolder = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot"
     let snapshotImagePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot/snapshotimagehash.txt"
     let imageName = imageNameReturn()
+    let fileManager = FileManager.default
     
+    let textFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit/git_test.txt"
+    let swiftFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit/git_test.swift"
+    let javaFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit/git_test.java"
+    let pythonFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit/git_test.py"
     
     while flag0 {
         print("Welcome to my GitHub-like program")
@@ -39,7 +42,31 @@ func lab2() {
                 print("Commited")
                 print()
             case "vin info":
-                print("info")
+                print("Enter your file name: ")
+                if let fileName = readLine() {
+                    switch fileName {
+                    case "git_test.txt":
+                        let fileCreationDate = (getFileCreationDate(filePath: textFilePath) ?? Date()).description
+                        let fileModifiedDate = (getFileModificationDate(filePath: textFilePath) ?? Date()).description
+                        let lines = textContent.components(separatedBy: "\n")
+                        let lineCount = lines.count
+                        let characterCount = textContent.count
+                        let words = textContent.components(separatedBy: .whitespacesAndNewlines).filter { !$0.isEmpty }
+                        let wordCount = words.count
+                        print("File name: git_test.txt")
+                        print("Extension: .txt")
+                        print("Created: \(String(describing: fileCreationDate))")
+                        print("Modified: \(String(describing: fileModifiedDate))")
+                        print("Line count: \(lineCount)")
+                        print("Word count \(wordCount)")
+                        print("Character count: \(characterCount)")
+                        print()
+//                    case "git_test.swift" || "git_test.py" || "git_test.java":
+//                    case "image.png":
+                    default:
+                        print("Cannot find file \(fileName)")
+                    }
+                }
             case "vin status":
                 let (currentTextContent, currentSwiftContent, currentPythonContent, currentJavaContent, _) = readFiles()
                 let (snapshotTextContent, snapshotSwiftContent, snapshotPythonContent, snapshotJavaContent, _) = readSnapshotFiles()
