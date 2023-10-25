@@ -19,7 +19,6 @@ func lab2() {
     let destinationFolder = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot"
     let snapshotImagePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot/snapshotimagehash.txt"
     let imageName = imageNameReturn()
-    let fileManager = FileManager.default
     
     let textFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit/git_test.txt"
     let swiftFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit/git_test.swift"
@@ -91,7 +90,6 @@ func lab2() {
                         }else if filename == "status" {
                             let (currentTextContent, currentSwiftContent, currentPythonContent, currentJavaContent, _) = readFiles()
                             let (snapshotTextContent, snapshotSwiftContent, snapshotPythonContent, snapshotJavaContent, _) = readSnapshotFiles()
-                            let currentImageContent = generateImageHash(imagePath)
                             let snapshotImageHash = readTextFileToString(filePath: snapshotImagePath)
                             guard let snapshotCreationTime = readTextFileToString(filePath: snapshotTimePath) else { return }
                             print("Created Snapshot: " + snapshotCreationTime)

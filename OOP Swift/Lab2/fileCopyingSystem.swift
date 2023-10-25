@@ -12,7 +12,7 @@ func copyFiles(from sourceFolder: String, to destinationFolder: String) {
     
     for fileExtension in fileExtensions {
         let sourceFilePath = "\(sourceFolder)/git_test.\(fileExtension)"
-        let destinationFilePath = "\(destinationFolder)/snapshot.\(fileExtension)"
+        let destinationFilePath = "\(destinationFolder)/git_test.\(fileExtension)"
         
         let fileManager = FileManager.default
         
