@@ -39,18 +39,13 @@ func getFileModificationDate(filePath: String) -> String {
     return dateFormatter.string(from: Date())
 }
 
-//
-
 func getImageSize(imagePath: String) -> (Int, Int)? {
-    // Read the file into a Data object
     guard let imageData = try? Data(contentsOf: URL(fileURLWithPath: imagePath)) else {
         return nil
     }
     
-    // Check for the JPEG Start of Frame (SOF) marker
     let sofMarker: [UInt8] = [0xFF, 0xC0]
     if let range = imageData.range(of: Data(sofMarker)) {
-        // Extract the width and height bytes from the marker
         let dataChunk = imageData.subdata(in: range.lowerBound..<range.lowerBound + 9)
         let height = (Int(dataChunk[5]) << 8) + Int(dataChunk[6])
         let width = (Int(dataChunk[7]) << 8) + Int(dataChunk[8])
@@ -79,20 +74,6 @@ func textFileData(in text: String) -> (lines: Int, words: Int, characters: Int) 
     }
     
     return (lineCount, wordCount, characterCount)
-}
-
-/*
-if let imageSize = getImageSize(imagePath: imagePath) {
-print("Image size: \(imageSize.0) pixels by \(imageSize.1) pixels")
-} else {
-print("Unable to get image size.")
-}
-*/
-
-enum FileExtension: String {
-    case swift = "swift"
-    case java = "java"
-    case python = "py"
 }
 
 func codeFilesOOPCounter(in filePath: String, fileType: FileExtension) -> (lines: Int, classes: Int, methods: Int) {

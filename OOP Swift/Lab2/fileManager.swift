@@ -56,3 +56,10 @@ class ProgramFile: File {
         super.init(fileName: fileName, fileExtension: fileExtension)
     }
 }
+
+enum FileExtension: String {
+    case swift = "swift"
+    case java = "java"
+    case python = "py"
+    case text = "txt"
+}
