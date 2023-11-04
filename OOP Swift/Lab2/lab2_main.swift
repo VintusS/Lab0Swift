@@ -97,6 +97,8 @@ func lab2() {
                             } catch {
                                 print("Error reading the snapshot file list: \(error.localizedDescription)")
                             }
+                            guard let snapshotCreationTime = readTextFileToString(filePath: snapshotTimePath) else { return }
+                            print("Created Snapshot at: " + snapshotCreationTime)
 
                             let newFiles = currentFileNames.subtracting(snapshotFileNames)
                             let deletedFiles = snapshotFileNames.subtracting(currentFileNames)
@@ -112,9 +114,6 @@ func lab2() {
                             let (currentTextContent, currentSwiftContent, currentPythonContent, currentJavaContent, _) = readFiles()
                             let (snapshotTextContent, snapshotSwiftContent, snapshotPythonContent, snapshotJavaContent, _) = readSnapshotFiles()
                             let snapshotImageHash = readTextFileToString(filePath: snapshotImagePath)
-
-                            guard let snapshotCreationTime = readTextFileToString(filePath: snapshotTimePath) else { return }
-                            print("Created Snapshot at: " + snapshotCreationTime)
 
                             if currentTextContent == snapshotTextContent {
                                 print(textFileName + " - No Change")

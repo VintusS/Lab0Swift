@@ -1,4 +1,4 @@
-cd "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/OOP Swift/Lab2"
+cd "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/OOP Swift"
 
-swiftc -o Laboratory2 main.swift Lab2/lab2_main.swift Lab2/fileReader.swift Lab2/imageChange.swift Lab2/generateImageHash.swift Lab2/fileReaderToString.swift Lab2/fileManager.swift Lab2/snapshotData.swift Lab2/fileCopyingSystem.swift Lab2/fileData.swift
+swiftc -o vin main.swift Lab2/lab2_main.swift Lab2/fileReader.swift Lab2/imageChange.swift Lab2/generateImageHash.swift Lab2/fileReaderToString.swift Lab2/fileManager.swift Lab2/snapshotData.swift Lab2/fileCopyingSystem.swift Lab2/fileData.swift
 
