@@ -71,6 +71,7 @@ class JavaFileReader: FileReader {
     }
 }
 
+// MARK: File content to string
 func readFiles() -> (String, String, String, String, (String, String, String, String)) {
     let textFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit/git_test.txt"
     let swiftFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit/git_test.swift"

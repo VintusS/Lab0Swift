@@ -9,33 +9,29 @@ import Foundation
 
 let sourceFolder = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit"
 
-
+// MARK: Status check every 5 sec
 func monitorChanges(in sourceFolder: String) {
     let fileManager = FileManager.default
-    var lastKnownFileStates = [String: String]() // Dictionary to hold file names and their hash
+    var lastKnownFileStates = [String: String]()
 
-    // Initial fill of the dictionary
     for fileName in getFileNames(in: sourceFolder) {
         if let fileHash = generateImageHash("\(sourceFolder)/\(fileName)") {
             lastKnownFileStates[fileName] = fileHash
         }
     }
 
-    // Start the monitoring loop
     while true {
-        sleep(5) // Wait for 5 seconds
+        sleep(5)
         var currentFileStates = [String: String]()
         
         let currentFileNames = Set(getFileNames(in: sourceFolder))
         
-        // Generate hashes for current files
         for fileName in currentFileNames {
             if let fileHash = generateImageHash("\(sourceFolder)/\(fileName)") {
                 currentFileStates[fileName] = fileHash
             }
         }
         
-        // Check for changes
         for (fileName, fileHash) in currentFileStates {
             if let lastHash = lastKnownFileStates[fileName] {
                 if lastHash != fileHash {
@@ -50,7 +46,6 @@ func monitorChanges(in sourceFolder: String) {
             }
         }
         
-        // Check for deletions
         for fileName in lastKnownFileStates.keys {
             if !currentFileStates.keys.contains(fileName) {
                 print()
@@ -58,8 +53,6 @@ func monitorChanges(in sourceFolder: String) {
                 print("your input>", terminator: " ")
             }
         }
-        
-        // Update the last known states to the current states
         lastKnownFileStates = currentFileStates
     }
 }

@@ -8,6 +8,7 @@
 import Foundation
 import CoreGraphics
 
+// MARK: Creation Date
 func getFileCreationDate(filePath: String) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -24,6 +25,7 @@ func getFileCreationDate(filePath: String) -> String {
     return dateFormatter.string(from: Date())
 }
 
+// MARK: Modification Date
 func getFileModificationDate(filePath: String) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"

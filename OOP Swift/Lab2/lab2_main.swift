@@ -7,8 +7,10 @@
 
 import Foundation
 
+// MARK: Main function for Laboratory work nr.2
 func lab2() {
 
+    // MARK: Paths
     var flag0 = true
     let imagePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit/image.jpg"
     let snapshotTimePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot/snapshotCreationTime.txt"
@@ -30,6 +32,7 @@ func lab2() {
     }
     
     while flag0 {
+        // MARK: Vin Main Menu
             print("Welcome to my GitHub-like program")
             print("Designed by VintusS")
             print("Enter your command: vin+(commit, info <filename>, status, exit):")
@@ -40,6 +43,7 @@ func lab2() {
                     let command = String(inputComponents[0])
                     let filename = String(inputComponents[1])
                     switch command {
+                        // MARK: vin commit
                     case "vin":
                         if filename == "commit" {
                             copyFiles(from: sourceFolder, to: destinationFolder)
@@ -48,6 +52,7 @@ func lab2() {
                             copyHashToTextFile(imageContent, filePath: snapshotImagePath)
                             print("Commited")
                             print()
+                            // MARK: vin info
                         } else if filename == "info" {
                             print("Enter file name: ")
                             if let fileName = readLine() {
@@ -91,6 +96,7 @@ func lab2() {
                                 }
                                 print()
                             }
+                            // MARK: vin status
                         } else if filename == "status" {
                             let currentFileNames = Set(getFileNames(in: sourceFolder))
                             var snapshotFileNames = Set<String>()
@@ -155,6 +161,7 @@ func lab2() {
 
                             print()
                         }
+                        // MARK: vin exit
                         else if filename == "exit" {
                             flag0 = false
                             exit(0)
