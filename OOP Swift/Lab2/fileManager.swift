@@ -63,3 +63,14 @@ enum FileExtension: String {
     case python = "py"
     case text = "txt"
 }
+
+func getFileNames(in directory: String) -> [String] {
+    let fileManager = FileManager.default
+    do {
+        let fileURLs = try fileManager.contentsOfDirectory(at: URL(fileURLWithPath: directory), includingPropertiesForKeys: nil)
+        return fileURLs.map { $0.lastPathComponent }
+    } catch {
+        print("Error while enumerating files \(directory): \(error.localizedDescription)")
+        return []
+    }
+}

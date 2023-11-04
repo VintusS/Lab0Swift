@@ -87,40 +87,76 @@ func lab2() {
                                 }
                                 print()
                             }
-                        }else if filename == "status" {
+                        } else if filename == "status" {
+                            let currentFileNames = Set(getFileNames(in: sourceFolder))
+                            var snapshotFileNames = Set<String>()
+
+                            // Attempt to read the snapshot file list
+                            do {
+                                let snapshotFileNamesString = try String(contentsOfFile: "\(destinationFolder)/fileList.txt", encoding: .utf8)
+                                snapshotFileNames = Set(snapshotFileNamesString.split(separator: "\n").map(String.init))
+                            } catch {
+                                print("Error reading the snapshot file list: \(error.localizedDescription)")
+                            }
+
+                            // Detect new and deleted files
+                            let newFiles = currentFileNames.subtracting(snapshotFileNames)
+                            let deletedFiles = snapshotFileNames.subtracting(currentFileNames)
+
+                            for file in newFiles {
+                                print("\(file) - New File")
+                            }
+
+                            for file in deletedFiles {
+                                print("\(file) - Deleted")
+                            }
+
+                            // Check for changes in existing files
                             let (currentTextContent, currentSwiftContent, currentPythonContent, currentJavaContent, _) = readFiles()
                             let (snapshotTextContent, snapshotSwiftContent, snapshotPythonContent, snapshotJavaContent, _) = readSnapshotFiles()
                             let snapshotImageHash = readTextFileToString(filePath: snapshotImagePath)
+
                             guard let snapshotCreationTime = readTextFileToString(filePath: snapshotTimePath) else { return }
-                            print("Created Snapshot: " + snapshotCreationTime)
+                            print("Created Snapshot at: " + snapshotCreationTime)
+
                             if currentTextContent == snapshotTextContent {
-                                print(textFileName + ":" + " Not changed")
+                                print(textFileName + " - No Change")
                             } else {
-                                print(textFileName + ":" + " Changed")
+                                print(textFileName + " - Changed")
                             }
+
                             if currentSwiftContent == snapshotSwiftContent {
-                                print(swiftFileName + ":" + " Not changed")
+                                print(swiftFileName + " - No Change")
                             } else {
-                                print(swiftFileName + ":" + " Changed")
+                                print(swiftFileName + " - Changed")
                             }
+
                             if currentPythonContent == snapshotPythonContent {
-                                print(pythonFileName + ":" + " Not changed")
+                                print(pythonFileName + " - No Change")
                             } else {
-                                print(pythonFileName + ":" + " Changed")
+                                print(pythonFileName + " - Changed")
                             }
+
                             if currentJavaContent == snapshotJavaContent {
-                                print(javaFileName + ":" + " Not changed")
+                                print(javaFileName + " - No Change")
                             } else {
-                                print(javaFileName + ":" + " Changed")
+                                print(javaFileName + " - Changed")
                             }
-                            if snapshotImageHash == imageContent {
-                                print(imageName + ": Not changed")
-                                print()
+
+                            if let currentImageHash = generateImageHash(imagePath) {
+                                if currentImageHash == snapshotImageHash {
+                                    print(imageName + " - No Change")
+                                } else {
+                                    print(imageName + " - Changed")
+                                }
                             } else {
-                                print(imageName + ": Changed")
-                                print()
+                                print("Error generating hash for \(imageName)")
                             }
-                        } else if filename == "exit" {
+
+                            // Print an additional newline for clean separation of command output
+                            print()
+                        }
+                        else if filename == "exit" {
                             flag0 = false
                             exit(0)
                         } else {
