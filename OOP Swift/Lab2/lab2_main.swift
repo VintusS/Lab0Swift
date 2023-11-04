@@ -25,6 +25,10 @@ func lab2() {
     let javaFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit/git_test.java"
     let pythonFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit/git_test.py"
     
+    DispatchQueue.global(qos: .background).async {
+        monitorChanges(in: sourceFolder)
+    }
+    
     while flag0 {
             print("Welcome to my GitHub-like program")
             print("Designed by VintusS")
