@@ -1,6 +1,6 @@
 .DS_Store
 git_test.py
 git_test.swift
-git_test.txt
 git_test.java
+random.txt
 image.jpg

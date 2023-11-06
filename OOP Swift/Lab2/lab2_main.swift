@@ -55,17 +55,18 @@ func lab2() {
                         } else if filename == "info" {
                             print("Enter file name: ")
                             if let fileName = readLine() {
-                                print("File name: \(fileName)")
                                 let fileExtension = fileName.components(separatedBy: ".").last ?? ""
-                                print("File extension: \(fileExtension)")
                                 let filePath = "\(sourceFolder)/\(fileName)"
                                 let creationTime = getFileCreationDate(filePath: filePath)
                                 let modificationTime = getFileModificationDate(filePath: filePath)
-                                print("Created: \(creationTime)")
-                                print("Modified: \(modificationTime)")
                                 if let fileType = FileExtension(rawValue: fileExtension) {
                                     switch fileType {
                                     case .text:
+                                        print("File name: \(fileName)")
+                                        print("File extension: \(fileExtension)")
+                                        print("Created: \(creationTime)")
+                                        print("Modified: \(modificationTime)")
+
                                         if let fileData = try? String(contentsOfFile: filePath, encoding: .utf8) {
                                             let textData = textFileData(in: fileData)
                                             print("Lines: \(textData.lines)")
@@ -73,12 +74,21 @@ func lab2() {
                                             print("Characters: \(textData.characters)")
                                         }
                                     case .swift, .java, .python:
+                                        print("File name: \(fileName)")
+                                        print("File extension: \(fileExtension)")
+                                        print("Created: \(creationTime)")
+                                        print("Modified: \(modificationTime)")
+
                                         let codeData = codeFilesOOPCounter(in: filePath, fileType: fileType)
                                         print("Line count: \(codeData.lines)")
                                         print("Class count: \(codeData.classes)")
                                         print("Method count: \(codeData.methods)")
                                     }
                                 } else if fileExtension == "jpg" {
+                                    print("File name: \(fileName)")
+                                    print("File extension: \(fileExtension)")
+                                    print("Created: \(creationTime)")
+                                    print("Modified: \(modificationTime)")
                                     if let imageSize = getImageSize(imagePath: filePath) {
                                         let (width, height) = imageSize
                                         print("Image size: \(width)x\(height)")

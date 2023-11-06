@@ -28,7 +28,7 @@ class TextFileReader: FileReader {
             let fileContents = try String(contentsOfFile: filePath, encoding: .utf8)
             return fileContents
         } catch {
-            print("Error reading text file: \(error)")
+//            print("Error reading text file: \(error)")
             return nil
         }
     }
