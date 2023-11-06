@@ -14,17 +14,10 @@ func lab2() {
     var flag0 = true
     let imagePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit/image.jpg"
     let snapshotTimePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot/snapshotCreationTime.txt"
-    var (textContent, swiftContent, pythonContent, javaContent, fileNames) = readFiles()
     guard let imageContent = generateImageHash(imagePath) else { return }
     let sourceFolder = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit"
     let destinationFolder = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot"
     let snapshotImagePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot/snapshotimagehash.txt"
-    let imageName = imageNameReturn()
-    
-    let textFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit/git_test.txt"
-    let swiftFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit/git_test.swift"
-    let javaFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit/git_test.java"
-    let pythonFilePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit/git_test.py"
     
     DispatchQueue.global(qos: .background).async {
         monitorChanges(in: sourceFolder)
@@ -47,7 +40,6 @@ func lab2() {
                         if filename == "commit" {
                             copyFiles(from: sourceFolder, to: destinationFolder)
                             changeSnapshotCreationTime()
-                            (textContent, swiftContent, pythonContent, javaContent, fileNames) = readFiles()
                             copyHashToTextFile(imageContent, filePath: snapshotImagePath)
                             print("Commited")
                             print()
