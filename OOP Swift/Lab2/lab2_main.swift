@@ -1,6 +1,6 @@
 //
 //  lab2_main.swift
-//  Lab0 Swift
+//  Lab2 Swift
 //
 //  Created by Dragosh on 16.10.2023.
 //

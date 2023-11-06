@@ -1,6 +1,6 @@
 //
 //  folderContinuousChecking.swift
-//  Lab0 Swift
+//  Lab2 Swift
 //
 //  Created by Dragosh on 04.11.2023.
 //
