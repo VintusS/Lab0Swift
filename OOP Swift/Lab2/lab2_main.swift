@@ -16,7 +16,6 @@ func lab2() {
     let snapshotTimePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot/snapshotCreationTime.txt"
     var (textContent, swiftContent, pythonContent, javaContent, fileNames) = readFiles()
     guard let imageContent = generateImageHash(imagePath) else { return }
-    var (textFileName, swiftFileName, pythonFileName, javaFileName) = fileNames
     let sourceFolder = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit"
     let destinationFolder = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot"
     let snapshotImagePath = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/snapshot/snapshotimagehash.txt"
@@ -57,108 +56,78 @@ func lab2() {
                             print("Enter file name: ")
                             if let fileName = readLine() {
                                 print("File name: \(fileName)")
-                                let fileExtention = fileName.components(separatedBy: ".").last ?? ""
-                                print("File extention: \(String(describing: fileExtention))")
-                                let creationTime = getFileCreationDate(filePath: textFilePath)
+                                let fileExtension = fileName.components(separatedBy: ".").last ?? ""
+                                print("File extension: \(fileExtension)")
+                                let filePath = "\(sourceFolder)/\(fileName)"
+                                let creationTime = getFileCreationDate(filePath: filePath)
+                                let modificationTime = getFileModificationDate(filePath: filePath)
                                 print("Created: \(creationTime)")
-                                let modificationTime = getFileModificationDate(filePath: textFilePath)
                                 print("Modified: \(modificationTime)")
-                                switch fileName {
-                                case "git_test.txt":
-                                    let fileData = textFileData(in: textContent)
-                                    print("Lines: \(fileData.lines)")
-                                    print("Words: \(fileData.words)")
-                                    print("Characters: \(fileData.characters)")
-                                    print()
-                                case "git_test.swift":
-                                    let swiftFileData = codeFilesOOPCounter(in: swiftFilePath, fileType: .swift)
-                                    print("Line count: \(swiftFileData.lines)")
-                                    print("Class count: \(swiftFileData.classes)")
-                                    print("Method count: \(swiftFileData.methods)")
-                                case "git_test.java":
-                                    let javaFileData = codeFilesOOPCounter(in: javaFilePath, fileType: .java)
-                                    print("Line count: \(javaFileData.lines)")
-                                    print("Class count: \(javaFileData.classes)")
-                                    print("Method count: \(javaFileData.methods)")
-                                case "git_test.py":
-                                    let pythonFileData = codeFilesOOPCounter(in: pythonFilePath, fileType: .python)
-                                    print("Line count: \(pythonFileData.lines)")
-                                    print("Class count: \(pythonFileData.classes)")
-                                    print("Method count: \(pythonFileData.methods)")
-                                    
-                                case "image.jpg":
-                                    guard let imageSize = getImageSize(imagePath: imagePath) else { return }
-                                    let (width, height) = imageSize
-                                    print("Image size: \(width)x\(height)")
-                                default:
-                                    print("No such file :(")
-                                    print()
+                                if let fileType = FileExtension(rawValue: fileExtension) {
+                                    switch fileType {
+                                    case .text:
+                                        if let fileData = try? String(contentsOfFile: filePath, encoding: .utf8) {
+                                            let textData = textFileData(in: fileData)
+                                            print("Lines: \(textData.lines)")
+                                            print("Words: \(textData.words)")
+                                            print("Characters: \(textData.characters)")
+                                        }
+                                    case .swift, .java, .python:
+                                        let codeData = codeFilesOOPCounter(in: filePath, fileType: fileType)
+                                        print("Line count: \(codeData.lines)")
+                                        print("Class count: \(codeData.classes)")
+                                        print("Method count: \(codeData.methods)")
+                                    }
+                                } else if fileExtension == "jpg" {
+                                    if let imageSize = getImageSize(imagePath: filePath) {
+                                        let (width, height) = imageSize
+                                        print("Image size: \(width)x\(height)")
+                                    } else {
+                                        print("Could not determine image size.")
+                                    }
+                                } else {
+                                    print("No handler for file extension: \(fileExtension)")
                                 }
-                                print()
                             }
-                            // MARK: vin status
+                            print()
                         } else if filename == "status" {
                             let currentFileNames = Set(getFileNames(in: sourceFolder))
                             var snapshotFileNames = Set<String>()
-
+                            
                             do {
                                 let snapshotFileNamesString = try String(contentsOfFile: "\(destinationFolder)/fileList.txt", encoding: .utf8)
                                 snapshotFileNames = Set(snapshotFileNamesString.split(separator: "\n").map(String.init))
                             } catch {
                                 print("Error reading the snapshot file list: \(error.localizedDescription)")
                             }
+                            
                             guard let snapshotCreationTime = readTextFileToString(filePath: snapshotTimePath) else { return }
                             print("Created Snapshot at: " + snapshotCreationTime)
-
+                            
                             let newFiles = currentFileNames.subtracting(snapshotFileNames)
                             let deletedFiles = snapshotFileNames.subtracting(currentFileNames)
-
+                            
                             for file in newFiles {
                                 print("\(file) - New File")
                             }
-
+                            
                             for file in deletedFiles {
                                 print("\(file) - Deleted")
                             }
-
-                            let (currentTextContent, currentSwiftContent, currentPythonContent, currentJavaContent, _) = readFiles()
-                            let (snapshotTextContent, snapshotSwiftContent, snapshotPythonContent, snapshotJavaContent, _) = readSnapshotFiles()
-                            let snapshotImageHash = readTextFileToString(filePath: snapshotImagePath)
-
-                            if currentTextContent == snapshotTextContent {
-                                print(textFileName + " - No Change")
-                            } else {
-                                print(textFileName + " - Changed")
-                            }
-
-                            if currentSwiftContent == snapshotSwiftContent {
-                                print(swiftFileName + " - No Change")
-                            } else {
-                                print(swiftFileName + " - Changed")
-                            }
-
-                            if currentPythonContent == snapshotPythonContent {
-                                print(pythonFileName + " - No Change")
-                            } else {
-                                print(pythonFileName + " - Changed")
-                            }
-
-                            if currentJavaContent == snapshotJavaContent {
-                                print(javaFileName + " - No Change")
-                            } else {
-                                print(javaFileName + " - Changed")
-                            }
-
-                            if let currentImageHash = generateImageHash(imagePath) {
-                                if currentImageHash == snapshotImageHash {
-                                    print(imageName + " - No Change")
+                            
+                            for file in currentFileNames.intersection(snapshotFileNames) {
+                                let currentFilePath = "\(sourceFolder)/\(file)"
+                                let snapshotFilePath = "\(destinationFolder)/\(file)"
+                                let currentFileHash = generateImageHash(currentFilePath) ?? ""
+                                let snapshotFileHash = generateImageHash(snapshotFilePath) ?? ""
+                                
+                                if currentFileHash != snapshotFileHash {
+                                    print("\(file) - Changed")
                                 } else {
-                                    print(imageName + " - Changed")
+                                    print("\(file) - No Change")
                                 }
-                            } else {
-                                print("Error generating hash for \(imageName)")
                             }
-
+                            
                             print()
                         }
                         // MARK: vin exit

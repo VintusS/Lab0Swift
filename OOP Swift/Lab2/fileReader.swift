@@ -13,7 +13,6 @@ class FileReader {
     init(filePath: String) {
         self.filePath = filePath
     }
-
     func readFile() -> String? {
         return nil
     }
