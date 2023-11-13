@@ -87,21 +87,24 @@ func lab2() {
                                     } else {
                                         print("Could not determine image size.")
                                     }
-                                } else {
+                                } else if fileExtension == "DS_Store" {
+                                    return
+                                }
+                                    else{
                                     print("No handler for file extension: \(fileExtension)")
                                 }
                             }
                             print()
                         } else if filename == "status" {
-                            let currentFileNames = Set(getFileNames(in: sourceFolder))
-                            var snapshotFileNames = Set<String>()
-                            
-                            do {
-                                let snapshotFileNamesString = try String(contentsOfFile: "\(destinationFolder)/fileList.txt", encoding: .utf8)
-                                snapshotFileNames = Set(snapshotFileNamesString.split(separator: "\n").map(String.init))
-                            } catch {
-                                print("Error reading the snapshot file list: \(error.localizedDescription)")
-                            }
+                            let currentFileNames = Set(getFileNames(in: sourceFolder).filter { $0 != ".DS_Store" })
+                                var snapshotFileNames = Set<String>()
+
+                                do {
+                                    let snapshotFileNamesString = try String(contentsOfFile: "\(destinationFolder)/fileList.txt", encoding: .utf8)
+                                    snapshotFileNames = Set(snapshotFileNamesString.split(separator: "\n").map(String.init)).filter { $0 != ".DS_Store" }
+                                } catch {
+                                    print("Error reading the snapshot file list: \(error.localizedDescription)")
+                                }
                             
                             guard let snapshotCreationTime = readTextFileToString(filePath: snapshotTimePath) else { return }
                             print("Created Snapshot at: " + snapshotCreationTime)

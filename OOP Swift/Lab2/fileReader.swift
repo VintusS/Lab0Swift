@@ -40,7 +40,7 @@ class SwiftFileReader: FileReader {
             let fileContents = try String(contentsOfFile: filePath, encoding: .utf8)
             return fileContents
         } catch {
-            print("Error reading Swift file: \(error)")
+//            print("Error reading Swift file: \(error)")
             return nil
         }
     }
@@ -52,7 +52,7 @@ class PythonFileReader: FileReader {
             let fileContents = try String(contentsOfFile: filePath, encoding: .utf8)
             return fileContents
         } catch {
-            print("Error reading Python file: \(error)")
+//            print("Error reading Python file: \(error)")
             return nil
         }
     }
@@ -64,7 +64,7 @@ class JavaFileReader: FileReader {
             let fileContents = try String(contentsOfFile: filePath, encoding: .utf8)
             return fileContents
         } catch {
-            print("Error reading Java file: \(error)")
+//            print("Error reading Java file: \(error)")
             return nil
         }
     }

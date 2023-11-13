@@ -13,20 +13,22 @@ let sourceFolder = "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/sum shit"
 func monitorChanges(in sourceFolder: String) {
     let fileManager = FileManager.default
     var lastKnownFileStates = [String: String]()
-
+    
     for fileName in getFileNames(in: sourceFolder) {
         if let fileHash = generateImageHash("\(sourceFolder)/\(fileName)") {
             lastKnownFileStates[fileName] = fileHash
         }
     }
-
+    
     while true {
         sleep(5)
         var currentFileStates = [String: String]()
         
-        let currentFileNames = Set(getFileNames(in: sourceFolder))
+        let currentFileNames = Set(getFileNames(in: sourceFolder).filter { $0 != ".DS_Store" })
         
         for fileName in currentFileNames {
+            if fileName == ".DS_Store" { continue }
+            
             if let fileHash = generateImageHash("\(sourceFolder)/\(fileName)") {
                 currentFileStates[fileName] = fileHash
             }
@@ -47,6 +49,8 @@ func monitorChanges(in sourceFolder: String) {
         }
         
         for fileName in lastKnownFileStates.keys {
+            if fileName == ".DS_Store" { continue }
+            
             if !currentFileStates.keys.contains(fileName) {
                 print()
                 print("\(fileName) - Deleted")
