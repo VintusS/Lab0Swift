@@ -26,20 +26,20 @@ class ArrayStack<Element> {
     }
 
     func peek() -> Element? {
-        storage.last
-    }
+            return storage.last
+        }
 
-    func isEmpty() -> Bool {
-        storage.isEmpty
-    }
+        func isEmpty() -> Bool {
+            return storage.isEmpty
+        }
 
-    func isFull() -> Bool {
-        storage.count == capacity
-    }
+        func isFull() -> Bool {
+            return storage.count == capacity
+        }
 
-    func size() -> Int {
-        storage.count
-    }
+        func size() -> Int {
+            return storage.count
+        }
     func elements() -> [Element] {
         return storage
     }

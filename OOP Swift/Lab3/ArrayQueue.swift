@@ -41,27 +41,27 @@ class ArrayQueue<Element> {
     }
 
     func peek() -> Element? {
-        guard !isEmpty() else {
-            return nil
+            guard !isEmpty() else {
+                return nil
+            }
+            return storage[front]
         }
-        return storage[front]
-    }
 
-    func isEmpty() -> Bool {
-        return front == (rear + 1) % capacity
-    }
-
-    func isFull() -> Bool {
-        return (rear + 2) % capacity == front
-    }
-
-    func size() -> Int {
-        if rear >= front {
-            return rear - front + 1
-        } else {
-            return rear + 1 + capacity - front
+        func isEmpty() -> Bool {
+            return front == (rear + 1) % capacity
         }
-    }
+
+        func isFull() -> Bool {
+            return (rear + 2) % capacity == front
+        }
+
+        func size() -> Int {
+            if rear >= front {
+                return rear - front + 1
+            } else {
+                return rear + 1 + capacity - front
+            }
+        }
     func elements() -> [Element] {
         return storage.compactMap { $0 }
     }
