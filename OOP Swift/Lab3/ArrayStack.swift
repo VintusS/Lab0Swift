@@ -2,36 +2,42 @@
 //  ArrayStack.swift
 //  Lab0 Swift
 //
-//  Created by Dragosh on 07.11.2023.
+//  Created by Dragosh on 14.11.2023.
 //
 
 import Foundation
 
-struct ArrayStack<Element>: Stack {
-    private var storage: [Element] = []
-    private let capacity: Int = 5
+class ArrayStack<Element> {
+    private var storage: [Element]
+    private let capacity: Int
 
-    mutating func push(_ element: Element) {
-        if !isFull() {
-            storage.append(element)
-        } else {
-            print("Stack is full.")
-        }
+    init(capacity: Int) {
+        self.capacity = capacity
+        storage = []
     }
 
-    mutating func pop() -> Element? {
-        return storage.popLast()
+    func push(_ element: Element) {
+        guard !isFull() else { return }
+        storage.append(element)
+    }
+
+    func pop() -> Element? {
+        storage.popLast()
     }
 
     func peek() -> Element? {
-        return storage.last
+        storage.last
     }
 
     func isEmpty() -> Bool {
-        return storage.isEmpty
+        storage.isEmpty
     }
 
     func isFull() -> Bool {
-        return storage.count >= capacity
+        storage.count == capacity
+    }
+
+    func size() -> Int {
+        storage.count
     }
 }

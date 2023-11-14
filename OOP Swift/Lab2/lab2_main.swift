@@ -95,6 +95,7 @@ func lab2() {
                                 }
                             }
                             print()
+                            //MARK: vin status
                         } else if filename == "status" {
                             let currentFileNames = Set(getFileNames(in: sourceFolder).filter { $0 != ".DS_Store" })
                                 var snapshotFileNames = Set<String>()
