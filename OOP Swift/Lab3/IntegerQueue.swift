@@ -28,6 +28,8 @@ func integerQueue() {
                 } else {
                     print("Queue is empty.")
                 }
+            case "print":
+                print("Queue elements: \(intQueue.elements())")
             case "exit":
                 print("Exiting...")
                 break

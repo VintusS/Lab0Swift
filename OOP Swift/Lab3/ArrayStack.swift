@@ -40,4 +40,7 @@ class ArrayStack<Element> {
     func size() -> Int {
         storage.count
     }
+    func elements() -> [Element] {
+        return storage
+    }
 }

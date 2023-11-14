@@ -28,6 +28,8 @@ func integerStack() {
                 } else {
                     print("Stack is empty.")
                 }
+            case "print":
+                print("Stack elements: \(intStack.elements())")
             case "exit":
                 print("Exiting...")
                 break

@@ -26,6 +26,8 @@ func genericStack() {
                 } else {
                     print("Stack is empty.")
                 }
+            case "print":
+                print("Stack elements: \(genericStack.elements())")
             case "exit":
                 print("Exiting...")
                 break

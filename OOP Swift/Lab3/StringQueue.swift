@@ -26,6 +26,8 @@ func stringQueue() {
                 } else {
                     print("Queue is empty.")
                 }
+            case "print":
+                print("Queue elements: \(stringQueue.elements())")
             case "exit":
                 print("Exiting...")
                 break

@@ -26,6 +26,8 @@ func genericQueue() {
                 } else {
                     print("Queue is empty.")
                 }
+            case "print":
+                print("Queue elements: \(genericQueue.elements())")
             case "exit":
                 print("Exiting...")
                 break

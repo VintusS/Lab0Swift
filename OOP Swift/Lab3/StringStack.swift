@@ -26,6 +26,8 @@ func stringStack() {
                 } else {
                     print("Stack is empty.")
                 }
+            case "print":
+                print("Stack elements: \(stringStack.elements())")
             case "exit":
                 print("Exiting...")
                 break
