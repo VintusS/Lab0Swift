@@ -20,8 +20,10 @@ func genericStack() {
         print("6.size")
         print("7.print")
         print()
-        print("0.exit")
+        print("0.Exit")
+        print("-.Back")
         print()
+        print("your input> ", terminator: "")
         if let action = readLine() {
             switch action {
             case "1":
@@ -52,7 +54,9 @@ func genericStack() {
                 print("Stack elements: \(genericStack.elements())")
             case "0":
                 print("Exiting...")
-                interface()
+                exit(0)
+            case "-":
+                stackInterface()
             default:
                 print("Invalid command.")
             }
