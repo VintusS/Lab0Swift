@@ -70,6 +70,7 @@ func queueInterface() {
     print("1.String Queue")
     print("2.Integer Queue")
     print("3.Generic Queue")
+    print()
     print("0.Exit")
     print("-.Back")
     print("your input> ", terminator: "")

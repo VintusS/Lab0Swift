@@ -66,3 +66,74 @@ class ArrayQueue<Element> {
         return storage.compactMap { $0 }
     }
 }
+
+
+func queueManSys<T>(queue: ArrayQueue<T>){
+    while true {
+        print("Enter your command:")
+        print("1.enqueue")
+        print("2.dequeue")
+        print("3.peek")
+        print("4.isEmpty?")
+        print("5.isFull?")
+        print("6.size")
+        print("7.print")
+        print()
+        print("0.Exit")
+        print("-.Back")
+        print()
+        print("your input> ", terminator: "")
+        if let action = readLine() {
+            switch action {
+            case "1":
+                print("Enter an element to enqueue:")
+                if let value = readLine() {
+                    if let convertedValue = convertToQueueType(value, T.self) {
+                        queue.enqueue(convertedValue)
+                        print("Enqueued \(convertedValue)")
+                    } else {
+                        print("Invalid input for type \(T.self).")
+                    }
+                }
+            case "2":
+                if let dequeued = queue.dequeue() {
+                    print("Dequeued: \(dequeued)")
+                } else {
+                    print("Queue is empty.")
+                }
+            case "3":
+                if let frontElement = queue.peek() {
+                    print("Front element: \(frontElement)")
+                } else {
+                    print("Queue is empty.")
+                }
+            case "4":
+                print("Queue is empty: \(queue.isEmpty())")
+            case "5":
+                print("Queue is full: \(queue.isFull())")
+            case "6":
+                print("Queue size: \(queue.size())")
+            case "7":
+                print("Queue elements: \(queue.elements())")
+            case "0":
+                print("Exiting...")
+                exit(0)
+            case "-":
+                queueInterface()
+            default:
+                print("Invalid command.")
+            }
+        }
+    }
+}
+
+func convertToQueueType<T>(_ value: String, _ type: T.Type) -> T? {
+    if type == Int.self, let intValue = Int(value) {
+        return intValue as? T
+    } else if type == Double.self, let doubleValue = Double(value) {
+        return doubleValue as? T
+    } else if type == String.self {
+        return value as? T
+    }
+    return nil
+}
