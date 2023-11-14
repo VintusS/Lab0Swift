@@ -8,10 +8,10 @@
 import Foundation
 
 func integerQueue() {
-    var intQueue = ArrayQueue<Int>(capacity: 5)
+    let intQueue = ArrayQueue<Int>(capacity: 5)
 
     while true {
-        print("Enter 'enqueue', 'dequeue', or 'exit':")
+        print("Enter your command(enqueue, dequeue, print or exit):")
         if let action = readLine() {
             switch action {
             case "enqueue":
@@ -32,7 +32,7 @@ func integerQueue() {
                 print("Queue elements: \(intQueue.elements())")
             case "exit":
                 print("Exiting...")
-                break
+                interface()
             default:
                 print("Invalid command.")
             }

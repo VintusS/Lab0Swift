@@ -11,7 +11,7 @@ func integerStack() {
     var intStack = ArrayStack<Int>(capacity: 5)
     
     while true {
-        print("Enter 'push', 'pop', or 'exit':")
+        print("Enter your command: (push, pop, print or exit):")
         if let action = readLine() {
             switch action {
             case "push":
@@ -32,7 +32,7 @@ func integerStack() {
                 print("Stack elements: \(intStack.elements())")
             case "exit":
                 print("Exiting...")
-                break
+                interface()
             default:
                 print("Invalid command.")
             }

@@ -62,7 +62,7 @@ class ArrayQueue<Element> {
             return rear + 1 + capacity - front
         }
     }
-    func elements() -> [Element?] {
-        return storage
+    func elements() -> [Element] {
+        return storage.compactMap { $0 }
     }
 }

@@ -8,10 +8,10 @@
 import Foundation
 
 func genericQueue() {
-    var genericQueue = ArrayQueue<Any>(capacity: 5)
+    let genericQueue = ArrayQueue<Any>(capacity: 5)
 
     while true {
-        print("Enter 'enqueue', 'dequeue', or 'exit':")
+        print("Enter your command(enqueue, dequeue, print or exit):")
         if let action = readLine() {
             switch action {
             case "enqueue":
@@ -30,7 +30,7 @@ func genericQueue() {
                 print("Queue elements: \(genericQueue.elements())")
             case "exit":
                 print("Exiting...")
-                break
+                interface()
             default:
                 print("Invalid command.")
             }

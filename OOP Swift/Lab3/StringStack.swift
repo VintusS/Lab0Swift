@@ -11,7 +11,7 @@ func stringStack() {
     var stringStack = ArrayStack<String>(capacity: 5)
     
     while true {
-        print("Enter 'push', 'pop', or 'exit':")
+        print("Enter your command: (push, pop, print or exit):")
         if let action = readLine() {
             switch action {
             case "push":
@@ -30,7 +30,7 @@ func stringStack() {
                 print("Stack elements: \(stringStack.elements())")
             case "exit":
                 print("Exiting...")
-                break
+                interface()
             default:
                 print("Invalid command.")
             }

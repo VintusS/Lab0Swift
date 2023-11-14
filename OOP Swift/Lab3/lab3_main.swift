@@ -8,6 +8,10 @@
 import Foundation
 
 func lab3() {
+    interface()
+}
+
+func interface() {
     print("Welcome to Queue/Stack manipulation system!")
     print("Choose an operation:")
     print("1.String Stack")
@@ -17,10 +21,8 @@ func lab3() {
     print("5.Integer Queue")
     print("6.Generic Queue")
     print()
-    interface()
-}
-
-func interface() {
+    print("0.Exit")
+    print()
     print("your input> ", terminator: "")
     if let input = readLine() {
         switch input {
@@ -36,6 +38,8 @@ func interface() {
             integerQueue()
         case "6":
             genericQueue()
+        case "0":
+            exit(0)
         default:
             print("Command not found :(")
             print()
