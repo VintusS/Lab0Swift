@@ -12,3 +12,4 @@ func genericQueue() {
 
     queueManSys(queue: genericQueue)
 }
+

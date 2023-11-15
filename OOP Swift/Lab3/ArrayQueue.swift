@@ -69,7 +69,8 @@ class ArrayQueue<Element> {
 
 
 func queueManSys<T>(queue: ArrayQueue<T>){
-    while true {
+    var flag = true
+    while flag {
         print("Enter your command:")
         print("1.enqueue")
         print("2.dequeue")
@@ -117,12 +118,14 @@ func queueManSys<T>(queue: ArrayQueue<T>){
                 print("Queue elements: \(queue.elements())")
             case "0":
                 print("Exiting...")
+                flag = false
                 exit(0)
             case "-":
                 queueInterface()
             default:
                 print("Invalid command.")
-            }
+      
+        }
         }
     }
 }

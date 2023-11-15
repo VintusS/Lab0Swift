@@ -46,7 +46,8 @@ class ArrayStack<Element> {
 }
 
 func stackManSys<T>(stack: ArrayStack<T>) {
-    while true {
+    var flag = true
+    while flag {
         print("Enter your command:")
         print("1.push")
         print("2.pop")
@@ -94,6 +95,7 @@ func stackManSys<T>(stack: ArrayStack<T>) {
                 print("Stack elements: \(stack.elements())")
             case "0":
                 print("Exiting...")
+                flag = false
                 exit(0)
             case "-":
                 stackInterface()
