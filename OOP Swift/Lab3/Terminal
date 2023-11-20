@@ -1,4 +1,4 @@
 cd "/Users/vintuss/Documents/sum shit/Swift/UTM OOP/OOP Swift"
 
-swiftc -o vin main.swift Lab3/lab3_main.swift Lab3/StringStack.swift Lab3/IntegerStack.swift Lab3/GenericStack.swift Lab3/ArrayStack.swift Lab3/StringQueue.swift Lab3/ArrayQueue.swift Lab3/IntegerQueue.swift Lab3/GenericQueue.swift
+swiftc -o vin main.swift Lab3/lab3_main.swift Lab3/StackManagement.swift Lab3/StackImplementation.swift Lab3/QueueManagement.swift Lab3/QueueImplementation.swift Lab3/LinkedListManagement.swift
 
