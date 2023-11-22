@@ -18,11 +18,12 @@ struct ArrayUpQueue<Element>: Queue {
     private var array = [Element]()
 
     mutating func enqueue(_ element: Element) {
-        array.append(element)
+        array += [element]
     }
 
     mutating func dequeue() -> Element? {
-        return array.isEmpty ? nil : array.removeFirst()
+        guard !array.isEmpty else { return nil }
+        return array.remove(at: 0)
     }
 
     func printQueue() {
@@ -34,11 +35,12 @@ struct ArrayDownQueue<Element>: Queue {
     private var array = [Element]()
 
     mutating func enqueue(_ element: Element) {
-        array.insert(element, at: 0)
+        array = [element] + array
     }
 
     mutating func dequeue() -> Element? {
-        return array.popLast()
+        guard !array.isEmpty else { return nil }
+        return array.remove(at: array.count - 1)
     }
 
     func printQueue() {

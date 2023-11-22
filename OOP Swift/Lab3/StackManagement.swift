@@ -19,15 +19,17 @@ struct ArrayUpStack<Element>: Stack {
     private var array = [Element]()
 
     mutating func push(_ item: Element) {
-        array.append(item)
+        array += [item]
     }
 
     mutating func pop() -> Element? {
-        return array.popLast()
+        guard !array.isEmpty else { return nil }
+        return array.remove(at: array.count - 1)
     }
 
     func peek() -> Element? {
-        return array.last
+        guard !array.isEmpty else { return nil }
+        return array[array.count - 1]
     }
 
     func printStack() {
@@ -39,15 +41,17 @@ struct ArrayDownStack<Element>: Stack {
     private var array = [Element]()
 
     mutating func push(_ item: Element) {
-        array.insert(item, at: 0)
+        array = [item] + array
     }
 
     mutating func pop() -> Element? {
-        return array.isEmpty ? nil : array.removeFirst()
+        guard !array.isEmpty else { return nil }
+        return array.remove(at: 0)
     }
 
     func peek() -> Element? {
-        return array.first
+        guard !array.isEmpty else { return nil }
+        return array[0]
     }
 
     func printStack() {
