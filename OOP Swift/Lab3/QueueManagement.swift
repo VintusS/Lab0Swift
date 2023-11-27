@@ -47,3 +47,36 @@ struct ArrayDownQueue<Element>: Queue {
         print(array)
     }
 }
+
+struct LinkedListQueue<Element>: Queue {
+    private var head: LinkedListNode<Element>?
+    private var tail: LinkedListNode<Element>?
+
+    mutating func enqueue(_ element: Element) {
+        let newNode = LinkedListNode(value: element)
+        if let tailNode = tail {
+            tailNode.next = newNode
+        } else {
+            head = newNode
+        }
+        tail = newNode
+    }
+
+    mutating func dequeue() -> Element? {
+        let value = head?.value
+        head = head?.next
+        if head == nil {
+            tail = nil
+        }
+        return value
+    }
+
+    func printQueue() {
+        var currentNode = head
+        while let node = currentNode {
+            print(node.value, terminator: " ")
+            currentNode = node.next
+        }
+        print()
+    }
+}

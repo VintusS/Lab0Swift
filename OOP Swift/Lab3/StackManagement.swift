@@ -58,3 +58,32 @@ struct ArrayDownStack<Element>: Stack {
         print(array)
     }
 }
+
+struct LinkedListStack<Element>: Stack {
+    private var head: LinkedListNode<Element>?
+    
+    mutating func push(_ item: Element) {
+        let newNode = LinkedListNode(value: item)
+        newNode.next = head
+        head = newNode
+    }
+    
+    mutating func pop() -> Element? {
+        let value = head?.value
+        head = head?.next
+        return value
+    }
+    
+    func peek() -> Element? {
+        return head?.value
+    }
+    
+    func printStack() {
+        var currentNode = head
+        while let node = currentNode {
+            print(node.value, terminator: " ")
+            currentNode = node.next
+        }
+        print()
+    }
+}
